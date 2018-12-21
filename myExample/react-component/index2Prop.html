@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +7,23 @@
     <script src="react.js"></script>
     <script src="react-dom.js"></script>
     <script src="babel.min.js"></script>
-    
-    
-    <title>My JSX-Demo</title>
-</head>
 
+    <title>React Prop</title>
+</head>
 <body>
-    <div id="helloworld"></div>
-    
+    <div id="prop"></div>
+
     <script type="text/babel">
+        class MyTitle extends React.Component{
+            render(){
+                return <h1 style={{color:this.props.color}} > Hello Props</h1>
+            }
+        };
+
         ReactDOM.render(
-            <h1>Hello World2</h1>,
-            document.getElementById('helloworld')
+            <MyTitle color="yellow"/>,
+            document.getElementById('prop')
         );
     </script>
-    <!-- <script src="index.js" type="text/babel"></script> -->
-
 </body>
-
 </html>
