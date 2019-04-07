@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <title>reactDemo2</title>
+</head>
+
+<body>
+  <div class="root"></div>
+
+  <script type="text/babel">
+    // const element = <h1>Hello, world!</h1>;
+    
+    function Element(props) {
+     return (
+       <div>
+        <h1>
+        hello world                   
+        </h1><Childelement text='imProp'/> 
+      </div>
+        );
+    }
+
+    class Childelement extends React.Component{
+      constructor(props){
+        super(props);
+        this.props=props;
+        this.state={ 
+          flag: true,
+          btnText:'去掉',
+          text:props.text,
+        };
+        this.changeFlag=this.changeFlag.bind(this);
+        this.updateText=this.updateText.bind(this);
+      }
+      changeFlag(){
+        this.setState({ 
+          flag: !this.state.flag,
+          btnText: this.state.flag? '显示' : '去掉' ,
+        });
+        // this.setState( state=>{
+        //   return {flag : false};
+        // })
+      }
+      updateText(){
+        let text=this.state.text==='更新啦'?'恢复回去':'更新啦'
+          
+        
+        this.setState({
+            text:text
+          });
+        
+      }
+      render(){
+        // let text= this.state.flag?<h2>hello world components <u>{this.state.text}</u> </h2>:<h1></h1>;
+        return (
+          <div>
+              {this.state.flag && <h2>hello world components <u>{this.state.text}</u> </h2>}
+            <button onClick={this.changeFlag}>点击{this.state.btnText}上一行文字</button>
+            <button onClick={this.updateText}>点击更新下划线文字</button>
+          </div>
+          );
+      }
+    }
+
+    ReactDOM.render(<Element/>, document.querySelector('.root') )
+  </script>
+</body>
+
+</html>
