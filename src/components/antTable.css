@@ -1,0 +1,53 @@
+.recentActive{
+  display: inline-block;
+  color:white;
+  background:red;
+  border: 1px solid red;
+  border-radius: 4px;
+  padding: 2px;
+  margin-left : 1px;
+}
+.recentActive:hover{
+  cursor: pointer;
+}
+
+.raPoppver{
+ 
+}
+
+/* .raCard{
+  text-align: center;
+  display: none;
+  position: fixed;
+  
+     
+  transform: translate(-50%,-120%);
+  /* transform: translateX(-100%); */
+  
+  /* background: rgba(0,0,0,0.5);
+  
+} */
+
+/* .raCard div:last-child{  
+  display: inline-block;
+  background: linear-gradient(transparent, rgba(0,0,0,0.5));
+  background: -webkit-repeating-linear-gradient(left top,transparent, transparent 60%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.5) 100%);
+  width: 10px;
+  transform: rotate(45deg) translateY(-50%);
+  height: 10px;
+  
+
+}  */
+
+
+/* .recentActive:hover+.raCard{
+  cursor: pointer;
+  display: inline-block;
+  
+  
+  color: white;
+  height: 40px;
+  padding: 10px;
+  border-radius: 4px;
+} */
+
