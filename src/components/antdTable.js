@@ -2,7 +2,7 @@ import React from 'react'
 import { Table, Divider, Tag } from 'antd';
 import './antTable.css'
 import { Popover, Button } from 'antd';
-
+import AntdCompBox from './antdCompBox.js'
 function Mytable(){
   const columns = [{
     title: 'Name',
@@ -81,7 +81,10 @@ function Mytable(){
     address: 'Sidney No. 1 Lake Park',
     tags: ['cool', 'teacher'],
   }];
-  return <Table columns={columns} dataSource={data} />
+  return (
+    <AntdCompBox>    
+      <Table columns={columns} dataSource={data} />
+    </AntdCompBox>);
 }
 
 export default Mytable;
