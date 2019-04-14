@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table, Divider, Tag } from 'antd';
 import './antTable.css'
-import { Popover, Button } from 'antd';
+import { Popover } from 'antd';
 import AntdCompBox from './antdCompBox.js'
 function Mytable(){
   const columns = [{
@@ -10,7 +10,7 @@ function Mytable(){
     key: 'name',
     render: (text,record) => {
       return (<span>
-        <a href="javascript:;">{text}</a>
+        <a href="/">{text}</a>
         { record.age>32 && (
           <Popover className='raPoppver' content={'123'}>
           <span className='recentActive'  >
@@ -55,9 +55,9 @@ function Mytable(){
     key: 'action',
     render: (text, record) => (
       <span>
-        <a href="javascript:;">Invite {record.name}</a>
+        <a href="/">Invite {record.name}</a>
         <Divider type="vertical" />
-        <a href="javascript:;">Delete</a>
+        <a href="/">Delete</a>
       </span>
     ),
   }];
@@ -82,7 +82,8 @@ function Mytable(){
     tags: ['cool', 'teacher'],
   }];
   return (
-    <AntdCompBox>    
+    <AntdCompBox>
+      <div className="myTableTitle">Columns Render函数</div>    
       <Table columns={columns} dataSource={data} />
     </AntdCompBox>);
 }
